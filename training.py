@@ -280,11 +280,11 @@ val_loader = DataLoader(val_dataset, batch_size=2, shuffle=False, num_workers=1,
 
 new_qs = '1. Is there any suspicious person or object that looks unusual in this scene?'+'\n' + '2. Is there any behavior that looks unusual in this scene?'+'\n'
 
-file = open('model_instruct_corrected_reasonable.txt','r')
+file = open('VERA_learner_instruct.txt','r')
 model_instruct =  file.read()
 file.close()
 
-file = open('optimizer_instruct_corrected_reasonable.txt','r')
+file = open('VERA_optimizer_instruct.txt','r')
 optimizer_instruct =  file.read()
 file.close()
 
