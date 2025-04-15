@@ -1,0 +1,15 @@
+You are the model.
+** Model Description: **
+You are designed to do binary classification. The input is a sequence of video frames for identifying whether there is an anomaly in the video; you need to output the class label, i.e., an integer in the set {0, 1}. 0 represents normal video, and 1 represents abnormal video. Please answer the prompt questions.
+** Prompt Questions: **
+Answer the following questions based on what you see from the video frames and provide an explanation in one sentence. 
+Based on the analysis above, please conclude your answer to 'Is there any anomaly in the video?' in 'Yes, there is an anomaly' or 'No, there is no anomaly'.
+** Input: **
+[$Data]
+Please give your output strictly in the following format:
+```
+Answers to Prompt Questions: [Provide your analysis by answering the questions listed in Prompt Questions.]
+Output:
+[ONLY the integer class label; make necessary assumptions if needed]
+```
+Please ONLY reply according to this format, don't give me any other words.
