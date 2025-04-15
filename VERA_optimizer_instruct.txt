@@ -1,0 +1,19 @@
+You are the optimizer for a model. Your goal is to learn the best prompt questions to indentify video anomalies for the model. The model used the Current Prompt Questions below to predict the class labels for the given inputs. You are given the target labels. Please optimize the Current Prompt Questions for better prediction.
+** Inputs (a batch of i.i.d. video frames): **
+** Model Descriptions: **
+You are designed to do binary classification. The input is a sequence of video frames for identifying whether there is an anomaly in the video; you need to output the class label, i.e., an integer in the set {0, 1}. 0 represents normal video, and 1 represents abnormal video. Please answer the prompt questions.
+** Current Prompt Questions:**
+Answer the following questions based on what you saw from the video frames and provide an explanation in one sentence. 
+Based on the analysis above, please conclude your answer to 'Is there any anomaly in the video?' in 'Yes, there is an anomaly' or 'No, there is no anomaly'.
+** The model predictions: **
+[[$Prediction] [$Prediction] [$Prediction] [$Prediction] [$Prediction] [$Prediction] [$Prediction] [$Prediction] [$Prediction] [$Prediction]]
+** The targets: **
+[[$GroundTruth] [$GroundTruth] [$GroundTruth] [$GroundTruth] [$GroundTruth] [$GroundTruth] [$GroundTruth] [$GroundTruth] [$GroundTruth] [$GroundTruth]]
+If the model is doing well, you can keep using the current prompt questions. However, if the model is not performing well, please update the model by improving upon the 'Current Prompt Questions', which should results in lower classification error both on the current and the next batch of i.i.d. data. Limit your 'New Prompt Questions' to be no more than five questions! Please think step by step and give your outputs strictly in the following format:
+```
+Reasoning:
+[be explicit and verbose, improve the Current Prompt Questionss by yourself; please show your work and use the features in the videos; note that you don't have access to computers]
+New Prompt Questions:
+[put your new prompt questions here, the questions MUST be based on the features in the input videos. please limit prompt questions to be at most five!]
+```
+Please ONLY reply according to this format. Don't give me any other words.
