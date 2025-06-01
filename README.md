@@ -50,7 +50,13 @@ Next, given the initial score, we need to run Step 2 and Step 3 introduced in Se
 python compute_auc.py
 ```
 
-Please note that the inference scores requires us to extract the vision feature beforehand. We use LAVAD's (https://github.com/lucazanella/lavad) and provide code and use ImageBind for extracting the vision features of each segment. You can access the extracted features we use for UCF-Crime from this [link](https://drive.google.com/file/d/1gwkgIKiPg6fpRaO5yXkxuRcN3X1-97LF/view?usp=drive_link) directly. 
+Please note that the inference scores requires us to extract the vision feature beforehand. We use LAVAD's (https://github.com/lucazanella/lavad) and provide code and use ImageBind for extracting the vision features of each segment. You can access the extracted features we use for UCF-Crime from this [link](https://drive.google.com/file/d/1gwkgIKiPg6fpRaO5yXkxuRcN3X1-97LF/view?usp=drive_link) directly. The extracted feature for XD-Violence is provide in this [link](https://drive.google.com/file/d/1_bN5TRYPpaFpLpf_M7YniRwWeOZgNJtI/view?usp=sharing).
+
+**Note**: We have provide the computation of AUC and AP for XD-Violence dataset as well, which is in the code ```compute_auc_XD_Violence.py``` and ```compute_AP_XD_Violence.py```, respectively. For AP computation in XD-Violence, we follow [Wu et al.](https://roc-ng.github.io/XD-Violence/) for the preprocessing and postprocessing of getting ground truth and smoothing. 
+
+## Acknolwedgement
+We thank [Zanella et al.](https://github.com/lucazanella/lavad), [Lv et al.](https://github.com/ktr-hubrt/VAD-LLaMA), and [Wu et al.](https://roc-ng.github.io/XD-Violence/) for sharing their codes.
+
 
 ## Citation
 If you use this code or find our work helpful, please consider citing:
