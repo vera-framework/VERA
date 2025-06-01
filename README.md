@@ -42,7 +42,7 @@ After finishing training and deciding the guiding questions we will use, we need
 python generate_intial_score.py
 ```
 
-Note: we have provided the initial scores obtained by VERA (backbone: InternVL2) on UCF-Crime with this [link](https://drive.google.com/file/d/1LIvPUE7Pv7tPxtXjpOU0sOpSZs6Y7xGv/view?usp=drive_link). We have also provided the initial scores obtained by VERA (backbone: InternVL2) on XD-Violence with this [link](https://drive.google.com/file/d/113rhslKnIE7CKeWd0HKiy8FWp0QJ5OxH/view?usp=drive_link).
+**Note**: We have provided the initial scores obtained by VERA (backbone: InternVL2) on UCF-Crime with this [link](https://drive.google.com/file/d/1LIvPUE7Pv7tPxtXjpOU0sOpSZs6Y7xGv/view?usp=drive_link). We have also provided the initial scores obtained by VERA (backbone: InternVL2) on XD-Violence with this [link](https://drive.google.com/file/d/113rhslKnIE7CKeWd0HKiy8FWp0QJ5OxH/view?usp=drive_link).
 
 Next, given the initial score, we need to run Step 2 and Step 3 introduced in Sec. 3.3 for getting the frame-level anomaly score. We put those two steps in one script and we just need to run this line:
 
