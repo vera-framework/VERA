@@ -68,10 +68,12 @@ We thank [Zanella et al.](https://github.com/lucazanella/lavad), [Lv et al.](htt
 ## Citation
 If you use this code or find our work helpful, please consider citing:
 ```
-@article{ye2024vera,
-  title={Vera: Explainable video anomaly detection via verbalized learning of vision-language models},
-  author={Ye, Muchao and Liu, Weiyang and He, Pan},
-  journal={arXiv preprint arXiv:2412.01095},
-  year={2024}
+@InProceedings{Ye_2025_CVPR,
+    author    = {Ye, Muchao and Liu, Weiyang and He, Pan},
+    title     = {VERA: Explainable Video Anomaly Detection via Verbalized Learning of Vision-Language Models},
+    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR)},
+    month     = {June},
+    year      = {2025},
+    pages     = {8679-8688}
 }
 ```
