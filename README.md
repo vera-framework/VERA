@@ -66,7 +66,7 @@ We thank [Zanella et al.](https://github.com/lucazanella/lavad), [Lv et al.](htt
 
 
 ## Citation
-If you use this code or find our work helpful, please consider citing:
+If you use this code or find our work helpful, please consider citing our paper. Thank you!
 ```
 @InProceedings{Ye_2025_CVPR,
     author    = {Ye, Muchao and Liu, Weiyang and He, Pan},
