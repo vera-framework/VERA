@@ -1,12 +1,16 @@
 # VERA: Explainable Video Anomaly Detection via Verbalized Learning of Vision-Language Models
 This is the code repo for the paper [`VERA: Explainable Video Anomaly Detection via Verbalized Learning of Vision-Language Models`](https://vera-framework.github.io/) (CVPR 2025).
 
-Our paper presents a video anomaly detection (VAD) method utilizing vision-language models (VLMs) without the need of using extra reasoning modules or instruction tuning datasets: **we just need to input the prompts found by verbalized learning with a given VLM to get VAD results.** This style will eliminate the construction of fine-tuning dataset or the introduction of additional LLMs like ChatGPT. With our code in this repo, we can do the following things:
+Our paper presents a video anomaly detection (VAD) method utilizing vision-language models (VLMs) without the need of using extra reasoning modules or instruction tuning datasets: **we just need to input the prompts found by verbalized learning with a given VLM to get VAD results.** This style will eliminate the construction of fine-tuning dataset or the introduction of additional LLMs like ChatGPT. 
 
-* Using the training codes to find the best prompt for your deployed VLMs in video anomaly detection (or other vision tasks)
-* Using the inference codes and provided prompts/initial scores to run our initial score generation/smoothing codes
+**What can this repo do for us?**
+With this repo, we can:
+* Use the training codes to find the best prompt for your deployed VLMs in video anomaly detection (or other vision tasks)
+* Use the inference codes and provided prompts/initial scores to run our initial score generation/smoothing codes
 
-In this repo, we take as an example using InternVL2 as the backbone for illustrating the use of the provided open-source code.
+**Note**
+
+In this repository, we use InternVL2 as an example to illustrate the use of the provided open-source code.
 
 ## 0. Environment and Data
 
