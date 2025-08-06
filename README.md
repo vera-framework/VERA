@@ -26,6 +26,7 @@ We can run the following script to obtain the optimal guiding question. The defa
 ```
 python training.py
 ```
+**Note: If you would like to train on XD-Violence, please uncomment L277-L279 in training.py. This will load the XD-Violence training and validation data.**
 
 
 For UCF-Crime, the best guiding questions we find are as follows:
