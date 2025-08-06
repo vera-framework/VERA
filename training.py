@@ -270,9 +270,14 @@ generation_config = dict(
     do_sample=False,
 )
 
-# Create the datasets  
+# Create the datasets; please put the frames of XD Violence in the folder Data/ucf/
 train_dataset = Video_Instruct_Dataset(vis_root='Data/ucf/', ann_root='Data/UCF_Instruct_train.json', num_sampled_frame=8)
 val_dataset = Video_Instruct_Dataset(vis_root='Data/ucf/', ann_root='Data/UCF_Instruct_val.json', TEST_FLAG=True, num_sampled_frame=8)
+
+# Create the datasets for XD-Violence; please put the frames of XD Violence in the folder Data/xd_violence/
+# train_dataset = Video_Instruct_Dataset(vis_root='Data/xd_violence/', ann_root='Data/xd_train.json', num_sampled_frame=8)
+# val_dataset = Video_Instruct_Dataset(vis_root='Data/xd_violence/', ann_root='Data/xd_val.json', TEST_FLAG=True, num_sampled_frame=8)
+
 
 # Create the data loaders
 train_loader = DataLoader(train_dataset, batch_size=2, shuffle=True, num_workers=16, drop_last=False)
