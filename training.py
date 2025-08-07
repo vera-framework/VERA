@@ -125,8 +125,15 @@ class VideoAnomalyDetectionModel(pl.LightningModule):
 
         responses, pixel_values, num_patches_list_real = self.forward(pixel_values, num_patches_list, batch_idx)
 
-        # Convert the last token in response to a label (1, 0, or 2 for unknown)
-        predict_labels = [1 if response[-1] == '1' else 0 if response[-1] == '0' else 2 for response in responses]
+        # Convert the last token in response to a label (0 or 1)
+        predict_labels = []
+        for response in responses:
+            split_response = response.split('Output')
+            response = split_response[0]
+            if '0' in split_response[-1]:
+                predict_labels.append(0)
+            else:
+                predict_labels.append(1)
         
         
         # Modify the optimizer instructions by replacing placeholders with predictions and ground truth
@@ -170,8 +177,18 @@ class VideoAnomalyDetectionModel(pl.LightningModule):
                 candidate=self.new_qs.split('\n')[:5]
                 self.new_qs = candidate[0]+'\n'+candidate[1]+'\n'+candidate[2]+'\n'+candidate[3]+'\n'+candidate[4]+'\n'
 
-        # Convert the last token in response to a label (1, 0, or 2 for unknown)
-        predict_labels = torch.tensor([1 if response[-1] == '1' else 0 if response[-1] == '0' else 2 for response in responses]).to(pixel_values.device)
+        # Convert the last token in response to a label (0 or 1)
+        predict_labels = []
+        for response in responses:
+            split_response = response.split('Output')
+            response = split_response[0]
+            if '0' in split_response[-1]:
+                predict_labels.append(0)
+            else:
+                predict_labels.append(1)
+        
+        predict_labels = torch.tensor(predict_labels).to(pixel_values.device)
+        
         # Calculate accuracy by comparing predicted labels to actual labels
         correct_predictions = (predict_labels == labels).sum()
         accuracy = correct_predictions / len(labels)
@@ -203,8 +220,17 @@ class VideoAnomalyDetectionModel(pl.LightningModule):
         pixel_values, num_patches_list, labels, video_name = batch
         responses, pixel_values, num_patches_list_real = self.forward(pixel_values, num_patches_list)
 
-        # Convert the last token in response to a label (1, 0, or 2 for unknown)
-        predict_labels = torch.tensor([1 if response[-1] == '1' else 0 if response[-1] == '0' else 2 for response in responses]).to(pixel_values.device)
+        # Convert the last token in response to a label (0 or 1)
+        predict_labels = []
+        for response in responses:
+            split_response = response.split('Output')
+            response = split_response[0]
+            if '0' in split_response[-1]:
+                predict_labels.append(0)
+            else:
+                predict_labels.append(1)
+        
+        predict_labels = torch.tensor(predict_labels).to(pixel_values.device)
 
         # Calculate accuracy by comparing predicted labels to actual labels
         correct_predictions = (predict_labels == labels).sum()
