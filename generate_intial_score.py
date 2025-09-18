@@ -188,7 +188,16 @@ class VideoAnomalyDetectionModelInference(pl.LightningModule):
         num_patches_list_real = [frame_size] * batch_size
 
         responses = self.model.batch_chat(self.tokenizer, pixel_values, num_patches_list=num_patches_list_real, questions=questions, generation_config=generation_config)
-        predict_labels = torch.tensor([1 if response[-1] == '1' else 0  for response in responses]).to(pixel_values.device)
+        
+        predict_labels = []
+        for response in responses:
+            split_response = response.split('Output')
+            response = split_response[0]
+            #if len(split_response) == 2:
+            if '0' in split_response[-1]:
+                predict_labels.append(0)
+            else:
+                predict_labels.append(1)
 
         return predict_labels
 
