@@ -51,7 +51,7 @@ For XD-Violence, the best guiding questions we find are as follows:
 After finishing training and deciding the guiding questions we will use, we need to do inference for test videos. The related codes are put in the `Inference` folder. We can put the learned questions in the backbone and run them on test data to get the initial anomaly score in the segment level. This is Step 1 in VERA's testing (Please refer to Sec. 3.3. in our paper). For this step, we need to run this script after putting guiding questions in the variable ```new_qs``` in the script.
 
 ```
-python generate_intial_score.py
+python generate_initial_score.py
 ```
 
 **Note**: We have provided the initial scores obtained by VERA (backbone: InternVL2) on UCF-Crime with this [link](https://drive.google.com/file/d/1LIvPUE7Pv7tPxtXjpOU0sOpSZs6Y7xGv/view?usp=drive_link). We have also provided the initial scores obtained by VERA (backbone: InternVL2) on XD-Violence with this [link](https://drive.google.com/file/d/113rhslKnIE7CKeWd0HKiy8FWp0QJ5OxH/view?usp=drive_link).
